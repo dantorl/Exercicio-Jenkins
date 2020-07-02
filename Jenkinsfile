@@ -20,7 +20,7 @@ pipeline{
 	 }
 	 stage('Enviar para AWS'){
 	  steps{
-	   sh 'scp Api-Investimentos-0.0.1-SNAPSHOT.jar ubuntu@3.19.211.210:Api-Investimentos-0.0.1-SNAPSHOT.jar'
+	   sh 'scp -o StrictHostKeyChecking=no Api-Investimentos-0.0.1-SNAPSHOT.jar ubuntu@3.19.211.210:Api-Investimentos-0.0.1-SNAPSHOT.jar'
 	   echo 'Enviado para AWS'
 	  }
 	 }
