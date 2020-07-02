@@ -6,7 +6,13 @@ pipeline{
 	 }
 	}
 	stages{
-	 stage('Test'){
+	 stage('Testar'){
+	  steps{
+	   sh './mvnw test'
+	   echo 'Testado'
+	  }
+	 }
+	 stage('Empacotar'){
 	  steps{
 	   sh './mvnw package'
 	   echo 'Empacotado'
