@@ -26,8 +26,7 @@ pipeline{
 	 }
 	 stage('Recarregar Serviço'){
 	  steps{
-	   sh 'ssh -t ubuntu@3.19.211.210'
-	   'sudo systemctl reload api-invest.service'
+	   ssh -t ubuntu@3.19.211.210 'sudo systemctl reload api-invest.service'
 	   echo 'Serviço recarregado'
 	  }
 	 }
