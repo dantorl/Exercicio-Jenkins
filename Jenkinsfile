@@ -26,7 +26,8 @@ pipeline{
 	 }
 	 stage('Recarregar Serviço'){
 	  steps{
-	   ssh -t ubuntu@3.19.211.210 'sudo systemctl reload api-invest.service'
+	   sh 'ssh -t -o StrictHostKeyChecking=no ubuntu@3.19.211.210'
+	   sh 'sudo systemctl reload api-invest.service'
 	   echo 'Serviço recarregado'
 	  }
 	 }
